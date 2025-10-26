@@ -1,0 +1,114 @@
+{
+  "nav": {
+    "title": "CSA Coastal Explorer",
+    "language": "Language"
+  },
+  "map": {
+    "title": "Coastal View",
+    "loading": "Loading map data...",
+    "error": "Error loading map",
+    "iceLayer": "Ice Loss Layer",
+    "zoomIn": "Zoom in",
+    "zoomOut": "Zoom out",
+    "resetView": "Reset view"
+  },
+  "stats": {
+    "title": "Arctic Ice Metrics",
+    "subtitle": "Track monthly sea ice loss, extent, and related climate indicators.",
+    "monthlyChange": "Monthly Change",
+    "monthlyChangeValue": "-52,000 km²",
+    "monthlyChangeMeta": "vs. January average",
+    "iceThickness": "Average Ice Thickness",
+    "iceThicknessValue": "1.4 m",
+    "iceThicknessMeta": "Northern Hemisphere",
+    "anomaly": "Anomaly",
+    "anomalyValue": "-8%",
+    "anomalyMeta": "Relative to 1981-2010 baseline",
+    "coastalErosion": "Coastal Erosion",
+    "seaLevelRise": "Sea Level Rise",
+    "temperature": "Temperature",
+    "precipitation": "Precipitation",
+    "windSpeed": "Wind Speed",
+    "units": {
+      "meters": "meters",
+      "celsius": "°C",
+      "millimeters": "mm",
+      "kmh": "km/h"
+    }
+  },
+  "controls": {
+    "reset": "Reset View",
+    "zoomIn": "Zoom In",
+    "zoomOut": "Zoom Out",
+    "layers": "Layers"
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "Error",
+    "noData": "No data available",
+    "close": "Close",
+    "open": "Open"
+  },
+  "calendar": {
+    "closeCalendar": "Close Calendar",
+    "selectDate": "Select Date",
+    "month": "Month",
+    "year": "Year"
+  },
+  "tools": {
+    "startPoint": "Start Point",
+    "destination": "Destination",
+    "dropPin": "Drop a pin point"
+  },
+  "sms": {
+    "title": "SMS Notifications",
+    "description": "Get Arctic ice updates delivered directly to your phone. Stay informed about critical changes.",
+    "phoneLabel": "Phone Number",
+    "phonePlaceholder": "+1 (555) 123-4567",
+    "subscribe": "Subscribe to SMS Updates",
+    "subscribing": "Subscribing...",
+    "unsubscribe": "Unsubscribe",
+    "unsubscribing": "Unsubscribing...",
+    "subscribed": "You're subscribed to SMS updates",
+    "subscribeSuccess": "Successfully subscribed to SMS updates!",
+    "unsubscribeSuccess": "Successfully unsubscribed from SMS updates.",
+    "broadcastSuccess": "Test update sent to {{count}} subscribers.",
+    "scheduleSuccess": "Message scheduled successfully!",
+    "scheduleArcticSuccess": "Arctic update scheduled for {{count}} subscribers.",
+    "cancelSuccess": "Scheduled message cancelled successfully.",
+    "errors": {
+      "phoneRequired": "Phone number is required",
+      "invalidPhone": "Please enter a valid phone number",
+      "subscribeFailed": "Failed to subscribe. Please try again.",
+      "unsubscribeFailed": "Failed to unsubscribe. Please try again.",
+      "broadcastFailed": "Failed to send updates. Please try again.",
+      "serviceUnavailable": "SMS service is currently unavailable",
+      "scheduleRequired": "Date and time are required",
+      "messageRequired": "Message is required",
+      "pastDate": "Scheduled time must be in the future",
+      "scheduleFailed": "Failed to schedule message. Please try again.",
+      "cancelFailed": "Failed to cancel scheduled message. Please try again."
+    },
+    "admin": {
+      "title": "Admin Controls",
+      "sendTest": "Send Test Update to All Subscribers",
+      "sending": "Sending...",
+      "subscribers": "{{count}} active subscribers",
+      "subscribersList": "Active Subscribers"
+    },
+    "scheduler": {
+      "title": "Schedule Messages",
+      "show": "Show Scheduler",
+      "hide": "Hide Scheduler", 
+      "date": "Date",
+      "time": "Time",
+      "personal": "Personal Message",
+      "customMessage": "Custom Message",
+      "messagePlaceholder": "Enter your custom message...",
+      "schedulePersonal": "Schedule Personal Message",
+      "scheduling": "Scheduling...",
+      "scheduledMessages": "Scheduled Messages",
+      "cancel": "Cancel"
+    }
+  }
+}

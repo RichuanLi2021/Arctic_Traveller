@@ -1,0 +1,114 @@
+{
+  "nav": {
+    "title": "Explorateur Côtier de l'ASC",
+    "language": "Langue"
+  },
+  "map": {
+    "title": "Vue côtière",
+    "loading": "Chargement des données cartographiques...",
+    "error": "Erreur lors du chargement de la carte",
+    "iceLayer": "Couche de fonte des glaces",
+    "zoomIn": "Zoomer",
+    "zoomOut": "Dézoomer",
+    "resetView": "Réinitialiser la vue"
+  },
+  "stats": {
+    "title": "Métriques de la glace arctique",
+    "subtitle": "Suivez la perte mensuelle de glace de mer, l'étendue et les indicateurs climatiques connexes.",
+    "monthlyChange": "Changement mensuel",
+    "monthlyChangeValue": "-52 000 km²",
+    "monthlyChangeMeta": "vs. moyenne de janvier",
+    "iceThickness": "Épaisseur moyenne de la glace",
+    "iceThicknessValue": "1,4 m",
+    "iceThicknessMeta": "Hémisphère Nord",
+    "anomaly": "Anomalie",
+    "anomalyValue": "-8%",
+    "anomalyMeta": "Par rapport à la période de référence 1981-2010",
+    "coastalErosion": "Érosion côtière",
+    "seaLevelRise": "Élévation du niveau de la mer",
+    "temperature": "Température",
+    "precipitation": "Précipitation",
+    "windSpeed": "Vitesse du vent",
+    "units": {
+      "meters": "mètres",
+      "celsius": "°C",
+      "millimeters": "mm",
+      "kmh": "km/h"
+    }
+  },
+  "controls": {
+    "reset": "Réinitialiser la vue",
+    "zoomIn": "Zoomer",
+    "zoomOut": "Dézoomer",
+    "layers": "Couches"
+  },
+  "common": {
+    "loading": "Chargement...",
+    "error": "Erreur",
+    "noData": "Aucune donnée disponible",
+    "close": "Fermer",
+    "open": "Ouvrir"
+  },
+  "calendar": {
+    "closeCalendar": "Fermer le calendrier",
+    "selectDate": "Sélectionner la date",
+    "month": "Mois",
+    "year": "Année"
+  },
+  "tools": {
+    "startPoint": "Point de départ",
+    "destination": "Destination",
+    "dropPin": "Placer un point"
+  },
+  "sms": {
+    "title": "Notifications SMS",
+    "description": "Recevez les mises à jour de la glace arctique directement sur votre téléphone. Restez informé des changements critiques en temps réel.",
+    "phoneLabel": "Numéro de téléphone",
+    "phonePlaceholder": "+1 (555) 123-4567",
+    "subscribe": "S'abonner aux mises à jour SMS",
+    "subscribing": "Abonnement en cours...",
+    "unsubscribe": "Se désabonner",
+    "unsubscribing": "Désabonnement en cours...",
+    "subscribed": "Vous êtes abonné(e) aux mises à jour SMS",
+    "subscribeSuccess": "Vous êtes maintenant abonné(e) aux mises à jour SMS !",
+    "unsubscribeSuccess": "Vous avez été désabonné(e) des mises à jour SMS.",
+    "broadcastSuccess": "Mise à jour de test envoyée à {{count}} abonnés.",
+    "scheduleSuccess": "Message programmé avec succès !",
+    "scheduleArcticSuccess": "Mise à jour sur l’Arctique programmée pour {{count}} abonnés.",
+    "cancelSuccess": "Message programmé annulé avec succès.",
+    "errors": {
+      "phoneRequired": "Le numéro de téléphone est requis",
+      "invalidPhone": "Veuillez entrer un numéro de téléphone valide",
+      "subscribeFailed": "Échec de l'abonnement. Veuillez réessayer.",
+      "unsubscribeFailed": "Échec du désabonnement. Veuillez réessayer.",
+      "broadcastFailed": "Échec de l'envoi des mises à jour. Veuillez réessayer.",
+      "serviceUnavailable": "Le service SMS est actuellement indisponible",
+      "scheduleRequired": "La date et l'heure sont requises",
+      "messageRequired": "Le message est requis",
+      "pastDate": "L'heure programmée doit être dans le futur",
+      "scheduleFailed": "Échec de la programmation du message. Veuillez réessayer.",
+      "cancelFailed": "Échec de l'annulation du message programmé. Veuillez réessayer."
+    },
+    "admin": {
+      "title": "Contrôles administrateur",
+      "sendTest": "Envoyer une mise à jour de test à tous les abonnés",
+      "sending": "Envoi en cours...",
+      "subscribers": "{{count}} abonnés actifs",
+      "subscribersList": "Abonnés actifs"
+    },
+    "scheduler": {
+      "title": "Planification de messages",
+      "show": "Afficher la planification",
+      "hide": "Masquer la planification",
+      "date": "Date",
+      "time": "Heure",
+      "personal": "Message personnel",
+      "customMessage": "Message personnalisé",
+      "messagePlaceholder": "Entrez votre message personnalisé...",
+      "schedulePersonal": "Programmer un message personnel",
+      "scheduling": "Programmation en cours...",
+      "scheduledMessages": "Messages programmés",
+      "cancel": "Annuler"
+    }
+  }
+}

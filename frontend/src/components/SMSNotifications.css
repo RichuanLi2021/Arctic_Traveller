@@ -1,0 +1,695 @@
+.sms-notifications {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  z-index: 1000;
+  margin: 0;
+  padding: 0;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  transition: all 0.3s ease;
+  overflow: visible;
+}
+
+/* Collapsed state - just the dropdown button */
+.sms-notifications.collapsed {
+  background: transparent;
+}
+
+/* Expanded state - content appears below */
+.sms-notifications.expanded {
+  background: transparent;
+}
+
+/* Compact Header - Always visible */
+.sms-compact-header {
+  padding: 12px 16px;
+  cursor: pointer;
+  background: rgba(76, 115, 255, 0.1);
+  border: 1px solid rgba(76, 115, 255, 0.3);
+  border-radius: 8px;
+  margin: 0;
+  transition: all 0.2s ease;
+  user-select: none;
+}
+
+.sms-compact-header:hover {
+  background: rgba(76, 115, 255, 0.2);
+  border-color: rgba(76, 115, 255, 0.5);
+}
+
+/* When expanded, change header styling to connect with content */
+.sms-notifications.expanded .sms-compact-header {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  margin-bottom: 0;
+}
+
+.compact-header-content {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.sms-icon {
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+
+.header-text {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.compact-title {
+  color: #e2e8f0;
+  font-size: 1.1rem;
+  margin: 0;
+  font-weight: 600;
+}
+
+.subscription-status {
+  color: #68d391;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.expand-toggle {
+  background: none;
+  border: none;
+  color: #a0aec0;
+  font-size: 1rem;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+.expand-toggle:hover {
+  background: rgba(76, 115, 255, 0.2);
+  color: #e2e8f0;
+}
+
+/* Expanded Content */
+.sms-expanded-content {
+  padding: 16px;
+  margin: 0 16px 16px 16px;
+  background: linear-gradient(135deg, rgba(26, 26, 46, 0.95) 0%, rgba(22, 33, 62, 0.95) 100%);
+  border: 1px solid rgba(76, 115, 255, 0.3);
+  border-radius: 8px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  animation: slideDown 0.3s ease-out;
+  max-width: calc(300px - 32px); /* Prevent overflow from left panel */
+  overflow: hidden;
+  word-wrap: break-word;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.sms-description-expanded {
+  margin-bottom: 20px;
+}
+
+.sms-description-expanded p {
+  color: #a0aec0;
+  font-size: 0.9rem;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.sms-header h3 {
+  color: #e2e8f0;
+  font-size: 1.5rem;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.sms-header h3::before {
+  content: "📱";
+  font-size: 1.2rem;
+}
+
+.sms-description {
+  color: #a0aec0;
+  font-size: 0.9rem;
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+
+.sms-form {
+  margin-bottom: 24px;
+}
+
+.phone-input-group {
+  margin-bottom: 12px;
+}
+
+.phone-input-group label {
+  display: block;
+  color: #e2e8f0;
+  font-size: 0.85rem;
+  margin-bottom: 4px;
+  font-weight: 500;
+}
+
+.phone-input {
+  width: 100%;
+  padding: 8px 12px;
+  background: #2d3748;
+  border: 1px solid #4a5568;
+  border-radius: 6px;
+  color: #e2e8f0;
+  font-size: 0.9rem;
+  transition: all 0.2s ease;
+  box-sizing: border-box;
+}
+
+.phone-input:focus {
+  outline: none;
+  border-color: #3182ce;
+  box-shadow: 0 0 0 3px rgba(49, 130, 206, 0.1);
+}
+
+.phone-input:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.phone-input::placeholder {
+  color: #718096;
+}
+
+.sms-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.subscribe-btn,
+.unsubscribe-btn,
+.test-broadcast-btn {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 36px;
+}
+
+.subscribe-btn {
+  background: linear-gradient(135deg, #38a169 0%, #2f855a 100%);
+  color: white;
+}
+
+.subscribe-btn:hover:not(:disabled) {
+  background: linear-gradient(135deg, #2f855a 0%, #276749 100%);
+  transform: translateY(-1px);
+}
+
+.unsubscribe-btn {
+  background: linear-gradient(135deg, #e53e3e 0%, #c53030 100%);
+  color: white;
+  font-size: 0.85rem;
+  padding: 8px 16px;
+  min-height: auto;
+}
+
+.unsubscribe-btn:hover:not(:disabled) {
+  background: linear-gradient(135deg, #c53030 0%, #9c2626 100%);
+}
+
+.test-broadcast-btn {
+  background: linear-gradient(135deg, #3182ce 0%, #2c5aa0 100%);
+  color: white;
+  width: 100%;
+}
+
+.test-broadcast-btn:hover:not(:disabled) {
+  background: linear-gradient(135deg, #2c5aa0 0%, #2a4e8d 100%);
+  transform: translateY(-1px);
+}
+
+.subscribe-btn:disabled,
+.unsubscribe-btn:disabled,
+.test-broadcast-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.subscribed-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.subscribed-status {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 16px;
+  background: rgba(56, 161, 105, 0.1);
+  border: 1px solid rgba(56, 161, 105, 0.3);
+  border-radius: 8px;
+}
+
+.status-icon {
+  font-size: 1.1rem;
+}
+
+.status-text {
+  color: #68d391;
+  font-weight: 500;
+}
+
+.sms-message {
+  padding: 12px 16px;
+  border-radius: 8px;
+  margin-top: 12px;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.sms-message.success {
+  background: rgba(56, 161, 105, 0.1);
+  border: 1px solid rgba(56, 161, 105, 0.3);
+  color: #68d391;
+}
+
+.sms-message.error {
+  background: rgba(229, 62, 62, 0.1);
+  border: 1px solid rgba(229, 62, 62, 0.3);
+  color: #fc8181;
+}
+
+.sms-admin {
+  border-top: 1px solid #2d3748;
+  padding-top: 20px;
+  margin-top: 20px;
+}
+
+.sms-admin h4 {
+  color: #e2e8f0;
+  font-size: 1.1rem;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.sms-admin h4::before {
+  content: "⚙️";
+  font-size: 1rem;
+}
+
+.admin-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.subscriber-count {
+  color: #a0aec0;
+  font-size: 0.85rem;
+  text-align: center;
+  padding: 8px;
+  background: rgba(45, 55, 72, 0.5);
+  border-radius: 6px;
+}
+
+.subscribers-list {
+  margin-top: 16px;
+}
+
+.subscribers-list h5 {
+  color: #e2e8f0;
+  font-size: 0.95rem;
+  margin-bottom: 10px;
+}
+
+.subscribers-list ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.subscriber-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 12px;
+  background: rgba(45, 55, 72, 0.3);
+  border-radius: 6px;
+  margin-bottom: 6px;
+}
+
+.subscriber-phone {
+  color: #e2e8f0;
+  font-size: 0.85rem;
+  font-family: monospace;
+}
+
+.subscriber-language {
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 2px 6px;
+  border-radius: 4px;
+  text-align: center;
+  min-width: 24px;
+}
+
+.lang-en {
+  background: rgba(56, 161, 105, 0.2);
+  color: #68d391;
+}
+
+.lang-fr {
+  background: rgba(49, 130, 206, 0.2);
+  color: #63b3ed;
+}
+
+.service-status {
+  border-top: 1px solid #2d3748;
+  padding-top: 12px;
+  margin-top: 16px;
+}
+
+.status-note {
+  color: #718096;
+  font-size: 0.8rem;
+  font-style: italic;
+  text-align: center;
+  display: block;
+}
+
+/* SMS Scheduler Styles */
+.sms-scheduler {
+  border-top: 1px solid #2d3748;
+  padding-top: 20px;
+  margin-top: 20px;
+}
+
+.scheduler-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.scheduler-header h4 {
+  color: #e2e8f0;
+  font-size: 1.1rem;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.scheduler-header h4::before {
+  content: "📅";
+  font-size: 1rem;
+}
+
+.toggle-scheduler-btn {
+  background: linear-gradient(135deg, #4c51bf 0%, #3c366b 100%);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 6px 12px;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.toggle-scheduler-btn:hover {
+  background: linear-gradient(135deg, #3c366b 0%, #2d2a4a 100%);
+}
+
+.scheduler-content {
+  background: rgba(45, 55, 72, 0.3);
+  border-radius: 6px;
+  padding: 12px;
+  margin-top: 8px;
+}
+
+.datetime-inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.input-group label {
+  color: #e2e8f0;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.date-input,
+.time-input {
+  padding: 8px 12px;
+  background: #2d3748;
+  border: 1px solid #4a5568;
+  border-radius: 6px;
+  color: #e2e8f0;
+  font-size: 0.9rem;
+  transition: all 0.2s ease;
+}
+
+.date-input:focus,
+.time-input:focus {
+  outline: none;
+  border-color: #3182ce;
+  box-shadow: 0 0 0 2px rgba(49, 130, 206, 0.1);
+}
+
+.message-textarea {
+  padding: 10px 12px;
+  background: #2d3748;
+  border: 1px solid #4a5568;
+  border-radius: 6px;
+  color: #e2e8f0;
+  font-size: 0.9rem;
+  font-family: inherit;
+  resize: vertical;
+  min-height: 60px;
+  transition: all 0.2s ease;
+}
+
+.message-textarea:focus {
+  outline: none;
+  border-color: #3182ce;
+  box-shadow: 0 0 0 2px rgba(49, 130, 206, 0.1);
+}
+
+.message-textarea::placeholder {
+  color: #718096;
+}
+
+.scheduler-options {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.option-group {
+  background: rgba(45, 55, 72, 0.4);
+  border-radius: 8px;
+  padding: 16px;
+  border: 1px solid #4a5568;
+}
+
+.option-group h5 {
+  color: #e2e8f0;
+  font-size: 1rem;
+  margin: 0 0 8px 0;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.option-group h5:first-child::before {
+  content: "✉️";
+}
+
+.option-group h5:last-child::before {
+  content: "📢";
+}
+
+.option-description {
+  color: #a0aec0;
+  font-size: 0.85rem;
+  margin: 0 0 12px 0;
+  line-height: 1.4;
+}
+
+.schedule-personal-btn,
+.schedule-broadcast-btn {
+  width: 100%;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-top: 12px;
+}
+
+.schedule-personal-btn {
+  background: linear-gradient(135deg, #38a169 0%, #2f855a 100%);
+  color: white;
+}
+
+.schedule-personal-btn:hover:not(:disabled) {
+  background: linear-gradient(135deg, #2f855a 0%, #276749 100%);
+}
+
+.schedule-broadcast-btn {
+  background: linear-gradient(135deg, #d69e2e 0%, #b7791f 100%);
+  color: white;
+}
+
+.schedule-broadcast-btn:hover:not(:disabled) {
+  background: linear-gradient(135deg, #b7791f 0%, #975a16 100%);
+}
+
+.schedule-personal-btn:disabled,
+.schedule-broadcast-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.scheduled-messages {
+  margin-top: 20px;
+  border-top: 1px solid #4a5568;
+  padding-top: 16px;
+}
+
+.scheduled-messages h5 {
+  color: #e2e8f0;
+  font-size: 0.95rem;
+  margin-bottom: 12px;
+}
+
+.scheduled-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.scheduled-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(45, 55, 72, 0.4);
+  border: 1px solid #4a5568;
+  border-radius: 6px;
+  padding: 12px;
+}
+
+.scheduled-info {
+  flex: 1;
+}
+
+.scheduled-phone {
+  color: #e2e8f0;
+  font-size: 0.85rem;
+  font-weight: 500;
+  margin-bottom: 2px;
+}
+
+.scheduled-time {
+  color: #a0aec0;
+  font-size: 0.8rem;
+  margin-bottom: 4px;
+}
+
+.scheduled-message {
+  color: #cbd5e0;
+  font-size: 0.8rem;
+  font-style: italic;
+}
+
+.cancel-scheduled-btn {
+  background: linear-gradient(135deg, #e53e3e 0%, #c53030 100%);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 6px 12px;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-left: 12px;
+}
+
+.cancel-scheduled-btn:hover:not(:disabled) {
+  background: linear-gradient(135deg, #c53030 0%, #9c2626 100%);
+}
+
+.cancel-scheduled-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .sms-notifications {
+    margin: 16px 0;
+    padding: 20px;
+  }
+  
+  .subscriber-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+  
+  .subscriber-language {
+    align-self: flex-end;
+  }
+}
+
+/* Animation for loading states */
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+.subscribe-btn:disabled,
+.unsubscribe-btn:disabled,
+.test-broadcast-btn:disabled {
+  animation: pulse 1.5s ease-in-out infinite;
+}
