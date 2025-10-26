@@ -30,6 +30,9 @@ export const requestPrediction = async (params: PredictionRequest): Promise<Feat
   return getRoutePrediction(params.start, params.end);
 };
 
+
+
+
 // Helper to validate coordinate bounds
 const isValidCoordinate = (lon: number, lat: number): boolean => {
   return (

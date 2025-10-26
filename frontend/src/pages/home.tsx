@@ -3,10 +3,6 @@ import { Calendar } from "../components/Calendar";
 import MapView from "../components/MapView";
 import RightStatsPanel from "../components/RightStatsPanel";
 import type { RouteControls } from "../components/routePredictions/AnimatedRouteOverlay";
-import { useTranslation } from 'react-i18next';
-import { ParameterTools } from '../components/ParameterTools'; 
-import { HamburgerButton } from '../components/HamburgerButton';
-import LanguageSwitcher from '../components/LanguageSwitcher';
 import SMSNotifications from '../components/SMSNotifications';
 
 const HomePage = () => {
