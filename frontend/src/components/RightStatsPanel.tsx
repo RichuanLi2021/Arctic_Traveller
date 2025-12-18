@@ -60,9 +60,9 @@ const RightStatsPanel = ({ predictedData }: RightStatsPanelProps) => {
   return (
     <aside className="stats-panel">
       <header className="stats-panel__header">
-        <h1 className="stats-panel__title">{t('stats.title')}</h1>
+        <h1 className="stats-panel__title">{('stats.title')}</h1>
         <p className="stats-panel__subtitle">
-          {t('stats.subtitle')}
+          {('stats.subtitle')}
         </p>
       </header>
 

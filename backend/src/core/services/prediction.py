@@ -12,6 +12,7 @@ import torch
 import geopandas as gpd
 from rasterio.transform import xy as transform_xy
 from shapely.geometry import Point
+import json
 
 
 class PredictionError(RuntimeError):
