@@ -100,6 +100,7 @@ const RightStatsPanel = ({ predictedData }: RightStatsPanelProps) => {
           <p className="stats-card__value stats-card__value--warm">{temperatureLabel}</p>
           <p className="stats-card__meta">{temperatureMeta}</p>
         </section>
+
       </div>
     </aside>
   );

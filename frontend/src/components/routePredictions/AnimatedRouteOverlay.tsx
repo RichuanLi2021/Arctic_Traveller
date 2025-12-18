@@ -2,11 +2,7 @@ import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import mapboxgl from "mapbox-gl";
 import type { FeatureCollection, Position } from "geojson";
 import api from "../../api/mapAPI";
-
-export type RouteControls = {
-  clearMarkers: () => void;
-  hasMarkers: boolean;
-};
+import type { RouteControls } from "../../types/domain";
 
 type AnimatedRouteOverlayProps = {
   map: mapboxgl.Map | null;
@@ -274,7 +270,7 @@ const AnimatedRouteOverlay = ({ map, isMapLoaded, onStatusChange, onControlsChan
 
   useEffect(
     () => () => {
-      onControlsChange?.({ clearMarkers: () => {}, hasMarkers: false });
+      onControlsChange?.({ clearMarkers: () => { }, hasMarkers: false });
     },
     [onControlsChange]
   );

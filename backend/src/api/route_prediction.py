@@ -1,6 +1,6 @@
 from fastapi import APIRouter
 
-from models import RouteRequest
+from ..core.models import RouteRequest
 
 router = APIRouter(tags=["route_prediction"])
 

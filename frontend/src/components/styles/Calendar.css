@@ -1,0 +1,256 @@
+.calendar-quick-box {
+  background: transparent;
+  border: none;
+  border-radius: 10px;
+  padding: 0 4px;
+  min-width: 180px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  position: relative;
+}
+
+.calendar-quick-box__label {
+  margin: 0;
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  color: rgba(220, 230, 255, 0.72);
+  text-transform: uppercase;
+}
+
+.calendar-quick-box__fields {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  align-items: stretch;
+}
+
+.jump-header {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.jump-trigger {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  border: 1px solid rgba(112, 144, 255, 0.25);
+  background: rgba(255, 255, 255, 0.08);
+  color: #f4f7ff;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.jump-calendar {
+  background: rgba(10, 18, 40, 0.45);
+  border: 1px solid rgba(112, 144, 255, 0.25);
+  border-radius: 10px;
+  padding: 8px;
+  display: none;
+  flex-direction: column;
+  gap: 6px;
+  position: absolute;
+  bottom: 40px;
+  left: 0;
+  z-index: 70;
+  box-shadow: 0 -10px 20px rgba(0, 0, 0, 0.35);
+}
+
+.jump-calendar.is-open {
+  display: flex;
+}
+
+.jump-calendar__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #f4f7ff;
+  font-size: 13px;
+}
+
+.jump-calendar__header button {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 8px;
+  width: 28px;
+  height: 28px;
+  color: #f4f7ff;
+  cursor: pointer;
+}
+
+.jump-calendar__weekdays {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  text-align: center;
+  font-size: 11px;
+  color: rgba(220, 230, 255, 0.8);
+}
+
+.jump-calendar__grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 4px;
+}
+
+.jump-calendar__day {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 6px;
+  color: #dfe8ff;
+  padding: 6px 0;
+  font-size: 12px;
+  cursor: pointer;
+  transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+.jump-calendar__day.is-disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+  background: rgba(255, 255, 255, 0.03);
+  border-style: dashed;
+}
+
+.jump-calendar__day.is-selected {
+  background: linear-gradient(135deg, #4ad0ff, #5c7bff);
+  color: #0a0f1b;
+  border-color: rgba(255, 255, 255, 0.35);
+}
+
+.jump-calendar__day:hover:not(.is-disabled) {
+  background: rgba(92, 123, 255, 0.55);
+}
+
+.jump-calendar__go {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #f4f7ff;
+  font-weight: 700;
+  cursor: pointer;
+  padding: 6px 8px;
+  border-radius: 8px;
+  transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+.jump-calendar__go:hover:not(:disabled) {
+  background: linear-gradient(135deg, #4ad0ff, #5c7bff);
+  border-color: rgba(255, 255, 255, 0.35);
+  color: #0a0f1b;
+}
+
+@media (max-width: 720px) {
+  .jump-calendar {
+    top: 36px;
+    bottom: auto;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.35);
+  }
+}
+
+/* MUI DatePicker Overrides for Dark Mode & Size */
+.jump-calendar .MuiDateCalendar-root {
+  color: #f4f7ff !important;
+  width: auto !important;
+  max-width: 260px !important;
+  /* Force smaller width */
+  max-height: 280px !important;
+}
+
+/* Days (1, 2, 3...) */
+.jump-calendar .MuiPickersDay-root {
+  color: #f4f7ff !important;
+  background-color: transparent !important;
+  width: 28px !important;
+  /* Smaller days */
+  height: 28px !important;
+  font-size: 0.75rem !important;
+}
+
+.jump-calendar .MuiPickersDay-root:hover {
+  background-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+.jump-calendar .MuiPickersDay-root.Mui-selected {
+  background-color: #4ad0ff !important;
+  color: #0a0f1b !important;
+}
+
+.jump-calendar .MuiPickersDay-root.Mui-selected:hover {
+  background-color: #38b0e0 !important;
+}
+
+/* Weekday Labels (S, M, T...) */
+.jump-calendar .MuiDayCalendar-weekDayLabel {
+  color: rgba(220, 230, 255, 0.6) !important;
+  width: 28px !important;
+  /* Match day width */
+  height: 28px !important;
+  font-size: 0.7rem !important;
+}
+
+/* Calendar Header (Month Year) */
+.jump-calendar .MuiPickersCalendarHeader-label {
+  color: #f4f7ff !important;
+  font-weight: 600 !important;
+  font-size: 0.9rem !important;
+}
+
+/* Reduce header padding/margin if needed */
+.jump-calendar .MuiPickersCalendarHeader-root {
+  margin-top: 0 !important;
+  margin-bottom: 4px !important;
+  padding-left: 12px !important;
+  padding-right: 12px !important;
+}
+
+/* Arrow Icons */
+.jump-calendar .MuiPickersArrowSwitcher-button {
+  color: #f4f7ff !important;
+}
+
+/* List of years (if user clicks year) */
+.jump-calendar .MuiPickersYear-yearButton {
+  color: #f4f7ff !important;
+  font-size: 0.85rem !important;
+}
+
+
+/* Disabled days */
+.jump-calendar .MuiPickersDay-root.Mui-disabled {
+  color: #8a95a5 !important;
+  /* Visible grey - brighter */
+  opacity: 1 !important;
+}
+
+/* Ensure year picker matches height and scrolls */
+.jump-calendar .MuiDateCalendar-viewTransitionContainer,
+.jump-calendar .MuiYearCalendar-root {
+  overflow-y: auto !important;
+  scrollbar-width: thin !important;
+  max-height: 240px !important;
+  /* Explicit constraint for inner view */
+}
+
+/* Webkit scrollbar styling for better appearance */
+.jump-calendar .MuiDateCalendar-viewTransitionContainer::-webkit-scrollbar,
+.jump-calendar .MuiYearCalendar-root::-webkit-scrollbar {
+  width: 6px;
+}
+
+.jump-calendar .MuiDateCalendar-viewTransitionContainer::-webkit-scrollbar-track,
+.jump-calendar .MuiYearCalendar-root::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 3px;
+}
+
+.jump-calendar .MuiDateCalendar-viewTransitionContainer::-webkit-scrollbar-thumb,
+.jump-calendar .MuiYearCalendar-root::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 3px;
+}
+
+.jump-calendar .MuiDateCalendar-viewTransitionContainer::-webkit-scrollbar-thumb:hover,
+.jump-calendar .MuiYearCalendar-root::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.3);
+}

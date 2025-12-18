@@ -17,3 +17,13 @@ class RouteRequest(BaseModel):
         except (TypeError, ValueError) as exc:
             raise ValueError("Coordinate values must be numbers.") from exc
         return value
+
+
+class ChatRequest(BaseModel):
+    message: str = Field(..., description="User message to the ice coverage assistant.")
+
+
+class ChatResponse(BaseModel):
+    reply: str
+    note: str | None = None
+

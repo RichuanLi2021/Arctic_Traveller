@@ -1,5 +1,5 @@
 import api from "../api/mapAPI";
-import type { IcePredictionResponse } from "../types";
+import type { IcePredictionResponse } from "../types/api";
 
 export const predictIceExtent = async (
   date: string,

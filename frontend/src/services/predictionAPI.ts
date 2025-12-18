@@ -1,7 +1,7 @@
 
 import type { Position, FeatureCollection } from "geojson";
 import api from "../api/mapAPI";
-import type { PredictionRequest } from "../types";
+import type { PredictionRequest } from "../types/api";
 
 /**
  * Request a route prediction between two points

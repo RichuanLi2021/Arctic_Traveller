@@ -10,8 +10,8 @@ import {
 import type { FeatureCollection } from "geojson";
 import { fetchIceExtentCoordinates } from "../services/iceExtentAPI";
 import { fetchAvailableDates } from "../services/availabilityAPI";
-import type { IceExtentResponse } from "../types";
-import type { IceExtentContextValue } from "../types";
+import type { IceExtentResponse } from "../types/api";
+import type { IceExtentContextValue } from "../types/domain";
 
 const IceExtentContext = createContext<IceExtentContextValue | undefined>(undefined);
 

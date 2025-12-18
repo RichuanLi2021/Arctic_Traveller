@@ -1,14 +1,19 @@
 import os
+import sys
+from pathlib import Path
 
 from dotenv import load_dotenv
-
-load_dotenv()
-
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-from api.ice_extent import router as ice_extent_router
-from api.route_prediction import router as route_prediction_router
+# Ensure the backend directory is in pythonpath if running directly (though module run is preferred)
+# sys.path.append(str(Path(__file__).resolve().parent.parent))
+
+# Load .env from backend root (parent of src)
+env_path = Path(__file__).resolve().parent.parent / ".env"
+load_dotenv(dotenv_path=env_path)
+
+from .api import register_routes
 
 API_PREFIX = os.getenv("API_PREFIX", "/api")
 app = FastAPI(title="NASA Ice Backend", version="0.1.0")
@@ -19,8 +24,7 @@ def health():
     return {"status": "ok"}
 
 
-app.include_router(ice_extent_router, prefix=API_PREFIX)
-app.include_router(route_prediction_router, prefix=API_PREFIX)
+register_routes(app, prefix=API_PREFIX)
 
 # CORS: allow local dev frontends by default
 allowed_origins = os.getenv("CORS_ALLOW_ORIGINS", "http://localhost:5173,http://127.0.0.1:5173").split(",")
@@ -47,4 +51,9 @@ if __name__ == "__main__":
     import uvicorn
 
     host, port = _get_host_port()
-    uvicorn.run("app:app", host=host, port=port, reload=True)
+    # When running directly, we assume src is in path or we are inside src.
+    # But uvicorn "src.main:app" string requires module path awareness.
+    # If we run `python src/main.py`, `uvicorn.run("src.main:app"...)` might fail if `src` is not a package.
+    # However, standard usage: cd backend && python -m src.main
+    # Or cd backend && uvicorn src.main:app --reload
+    uvicorn.run("src.main:app", host=host, port=port, reload=True)

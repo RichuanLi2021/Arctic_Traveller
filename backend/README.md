@@ -5,6 +5,7 @@ under the `/api` prefix:
 
 - `GET /api/ice_extent` – converts GeoTIFF sea-ice rasters into GeoJSON
 - `POST /api/route_prediction` – placeholder that returns a straight line between two coordinates
+- `POST /api/chat` – send a message to a integrated LLM and return a reply
 
 ## Quick start
 
@@ -13,8 +14,12 @@ python3 -m venv .venv
 . .venv/bin/activate
 pip install -r requirements.txt
 cp .env.example .env  # customise host/port or dataset path as needed
-python app.py
+python -m src.main
 ```
+
+## Creating new Endpoints
+
+Routes can be found in `src/api` and logic can be found in `src/core`
 
 ## Datasets
 
